@@ -1,6 +1,6 @@
 {
   "name": "lodash-humps-ts",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Recursive camelCase of object keys and arrays of objects",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -21,7 +21,7 @@
     "objects"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --rootDir src",
     "lint": "eslint src --ext .ts --fix",
     "test": "mocha --require ts-node/register test/*.ts test/**/*.ts"
   },

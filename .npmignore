@@ -1,3 +1,9 @@
-src/
-test/
-examples/
+.idea
+.git
+src
+dist
+test
+.editorconfig
+.eslintignore
+.eslintrc
+.prettierrc.js
