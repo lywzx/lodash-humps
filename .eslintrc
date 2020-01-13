@@ -2,14 +2,40 @@
 # yarn add -D eslint eslint-plugin-import eslint-plugin-lodash-fp eslint-config-airbnb-base
 env:
   browser: false
+  es6: true
 extends:
   - eslint:recommended
   - airbnb-base
   - plugin:import/errors
   - plugin:import/warnings
   - plugin:lodash-fp/recommended
+  - prettier
+  - prettier/@typescript-eslint
+  - plugin:prettier/recommended
+  - plugin:@typescript-eslint/recommended
 plugins:
   - import
   - lodash-fp
+  - '@typescript-eslint'
+parserOptions:
+  project: './tsconfig.json'
+parser: '@typescript-eslint/parser'
 rules:
-  semi: [2, never]
+  semi: 'error'
+  newline-per-chained-call: 2
+  quotes: [error, single]
+  '@typescript-eslint/semi': [2, always]
+  '@typescript-eslint/interface-name-prefix': 1
+  '@typescript-eslint/no-explicit-any': off
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-use-before-define': off
+  '@typescript-eslint/no-parameter-properties': off
+  indent: off
+  '@typescript-eslint/indent': off
+  'import/extensions': [2, never]
+settings:
+  "import/extensions": ['.js', '.ts']
+  "import/resolver":
+    "node":
+      "extensions": [ '.js', '.ts' ]

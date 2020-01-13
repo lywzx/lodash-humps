@@ -3,6 +3,7 @@ module.exports = function config(api) {
 
   const presets = [
     ['@babel/preset-env'],
+    ['@babel/preset-typescript']
   ]
   const plugins = ['add-module-exports', 'lodash']
 

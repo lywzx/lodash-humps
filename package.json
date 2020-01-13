@@ -1,12 +1,13 @@
 {
-  "name": "lodash-humps",
-  "version": "3.1.5",
+  "name": "lodash-humps-ts",
+  "version": "0.0.1",
   "description": "Recursive camelCase of object keys and arrays of objects",
-  "main": "lib/index.js",
-  "author": "Kai Curry <kai@cape.io> (http://www.cape.io/)",
-  "repository": "cape-io/lodash-humps",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "author": "lywzx, Kai Curry <kai@cape.io> (http://www.cape.io/)",
+  "repository": "https://github.com/lywzx/lodash-humps-ts",
   "bugs": {
-    "url": "https://github.com/cape-io/lodash-humps/issues"
+    "url": "https://github.com/lywzx/lodash-humps-ts/issues"
   },
   "keywords": [
     "utils",
@@ -20,26 +21,31 @@
     "objects"
   ],
   "scripts": {
-    "build": "mkdir -p lib && babel ./src -d lib",
-    "prepublish": "npm run build",
-    "test-common": "tape test/common.js",
-    "test": "npm run build && babel-tape-runner test/**/*spec.js"
+    "build": "tsc",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "mocha --require ts-node/register test/*.ts test/**/*.ts"
   },
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.14"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-plugin-lodash": "^3.3.4",
-    "babel-tape-runner": "^3.0.0",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0",
+    "@types/chai": "^4.2.7",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^5.2.7",
+    "@types/tape": "^4.2.33",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-lodash-fp": "^2.2.0-a1",
-    "tape": "^4.6.3"
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.1",
+    "typescript": "^3.7.4"
   }
 }
